@@ -1,7 +1,7 @@
 # Assignment 6
 
 ## Task
-Implement a calculator using Bison that supports variables. Variables can be any of the 26 lower case letters. Numbers can be in the range zero to nine. ':=' will be used for assignment and each statement will be terminated by a semicolon. Whitespace and newlines should be ingored on input. Operations used will be addition, subtraction, multiplication and (integer) division. The calculator should support a unary minus. The calculator should support a 'print' command which prints a variables value followed by a newline.
+Implement a calculator using Bison that supports variables. Variables can be any of the 26 lower case letters. Numbers can be in the range zero to nine. `:=` will be used for assignment and each statement will be terminated by a semicolon. Whitespace and newlines should be ignored on input. Operations used will be addition, subtraction, multiplication and (integer) division. The calculator should support a unary minus. The calculator should support a `print` command which prints a variables value followed by a newline.
 ## Example Input
 ```
 a:=6;
