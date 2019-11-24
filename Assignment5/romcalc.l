@@ -1,11 +1,17 @@
 %{
-# include "romancalc.tab.h"
-#  include <stdlib.h>
+# include "romcalc.tab.h"
+# include <stdlib.h>
 
 void yyerror(char *s);
 %}
 
 %%
+"+"     { return PLUS; }
+"-"     { return MINUS; }
+"*"     { return MUL; }
+"/"     { return DIV; }
+"{"     {return OB;}
+"}"     {return CB;}
 "I"	    { yylval = 1; return I; }
 "IV"    { yylval = 4; return IV;}
 "V"	    { yylval = 5; return V; }
@@ -19,6 +25,7 @@ void yyerror(char *s);
 "D"     { yylval = 500; return D; }
 "CM"    { yylval = 900; return CM; }
 "M"     { yylval = 1000; return M; }
+"VV"    { yyerror("syntax error");}
 "CMCC"  { yyerror("syntax error");}
 \n      { return EOL; }
 [ \t]   { /* ignore white space */ }
