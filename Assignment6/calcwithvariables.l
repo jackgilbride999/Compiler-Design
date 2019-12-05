@@ -1,7 +1,5 @@
 %{
-# include "romcalc.tab.h"
-# include <stdlib.h>
-
+# include "calcwithvariables.h"
 void yyerror(char *s);
 %}
 
@@ -10,12 +8,15 @@ void yyerror(char *s);
 "-"     { return MINUS; }
 "*"     { return MUL; }
 "/"     { return DIV; }
-"{"     { return OB;}
-"}"     { return CB;}
 ":="    { return ASSIGN;}
 "print" { return PRINT;}
+";"     { return SEMICOLON; }
 
-\n      { return EOL; }
+[a-z]   {yyval = yytext[0] - '0'; return VARIABLE;}
+[0-9]+  {yyval = atoi(yytext); return NUMBER; }
+
+
+\n      {}
 [ \t]   { /* ignore white space */ }
 .	{ yyerror("syntax error");}
 %%
