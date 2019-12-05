@@ -9,6 +9,4 @@ b:=a+7-4;
 print b;
 ```
 ## Invalid Input
-If an invalid input is detected the program should output the words 
-"syntax error" followed by a newline character to standard output
-and then exit.
+If an invalid input is detected the program should output the words "syntax error" followed by a newline character to standard output and then exit.
