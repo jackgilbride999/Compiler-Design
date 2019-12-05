@@ -21,11 +21,11 @@ sentence: /* nothing */
  ; 
 
 print: 
- |  PRINT var { printf("%d\n", variables[$2 - 'a']); }
+ |  PRINT var { printf("%d\n", variables[$2]); }
 ;
 
 assignment:
- |  var ASSIGN exp { variables[$2 - 'a' ] = $3; }
+ |  var ASSIGN exp { variables[$2] = $3; }
 ;
 
 exp: factor {$$ = $1;}
@@ -40,7 +40,7 @@ factor: term {$$ = $1;}
 
 term: NUMBER
  |  MINUS NUMBER {$$ = ($2*(-1));}
- |  VARIABLE {$$ = variables[($1) - 'a'];}
+ |  VARIABLE {$$ = variables[($1)];}
 ;
 
 %%

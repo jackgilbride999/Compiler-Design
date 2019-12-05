@@ -12,7 +12,7 @@ void yyerror(char *s);
 "print" { return PRINT;}
 ";"     { return SEMICOLON; }
 
-[a-z]   {yyval = yytext[0] - '0'; return VARIABLE;}
+[a-z]   {yyval = yytext[0] - 'a'; return VARIABLE;}
 [0-9]+  {yyval = atoi(yytext); return NUMBER; }
 
 
